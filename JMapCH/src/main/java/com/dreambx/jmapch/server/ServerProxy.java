@@ -20,10 +20,15 @@
 
 package com.dreambx.jmapch.server;
 
-import com.dreambx.jmapch.CommonProxy;
+import com.dreambx.jmapch.JmapCH;
+import com.dreambx.jmapch.common.CommonProxy;
+import com.dreambx.jmapch.common.command.CmdBase;
+import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -46,5 +51,19 @@ public class ServerProxy extends CommonProxy
     @Override
     public void postInit(FMLPostInitializationEvent event)
     {
+        JmapCH.LOGGER.warn("[JourneyMap Command Helper]Server side is not finished.");
+        if (!Loader.isModLoaded("journeymap"))
+        {
+            JmapCH.LOGGER.info("JourneyMap not loaded.");
+        }
+        else
+        {
+            JmapCH.LOGGER.info("JourneyMap loaded.");
+        }
+    }
+
+    @Mod.EventHandler
+    public void onServerStarting(FMLServerStartingEvent event) {
+        event.registerServerCommand(new CmdBase());
     }
 }

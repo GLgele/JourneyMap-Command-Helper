@@ -1,9 +1,13 @@
 package com.dreambx.jmapch;
 
+import com.dreambx.jmapch.common.CommonProxy;
+import com.dreambx.jmapch.common.Registery;
+import net.minecraft.util.registry.IRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -16,7 +20,7 @@ public class JmapCH
     public static final String VERSION = "1.0";
     public static final String DEPENDENCIES = "after:journeymap";
 
-    public static Logger LOGGER;
+    public static final Logger LOGGER = LogManager.getFormatterLogger(MODID);
 
     @Mod.Instance(JmapCH.MODID)
     public static JmapCH instance;
@@ -27,7 +31,6 @@ public class JmapCH
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-        LOGGER = LogManager.getFormatterLogger(MODID);
     }
 
     @EventHandler
@@ -36,5 +39,11 @@ public class JmapCH
         // some example code
         //logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
         LOGGER.info("JourneyMap Command Helper init.");
+        Registery.initRegistries();
+    }
+    @EventHandler
+    public void postInit(FMLPostInitializationEvent event)
+    {
+        proxy.postInit(event);
     }
 }

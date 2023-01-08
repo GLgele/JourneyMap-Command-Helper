@@ -20,8 +20,9 @@
 
 package com.dreambx.jmapch.client;
 
-import com.dreambx.jmapch.CommonProxy;
+import com.dreambx.jmapch.common.CommonProxy;
 import com.dreambx.jmapch.JmapCH;
+import com.dreambx.jmapch.common.Registery;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -57,6 +58,7 @@ public class ClientProxy extends CommonProxy
         {
             JmapCH.LOGGER.info("JourneyMap loaded.");
         }
+        Registery.commandRegistries();
     }
 
 }
