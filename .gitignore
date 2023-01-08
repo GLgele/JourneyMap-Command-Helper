@@ -11,14 +11,17 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
+#*.jar
 *.war
 *.nar
 *.ear
-*.zip
+#*.zip
 *.tar.gz
 *.rar
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+JMapCH/lib/journeymap-1.12.2-5.5.4.jar.cache
+JMapCH/lib/journeymap-api-1.12-1.4-examplemod.jar.cache
