@@ -1,6 +1,8 @@
 package com.dreambx.jmapch.common.command;
 
 import com.dreambx.jmapch.client.Constants;
+import com.dreambx.jmapch.client.plugin.CmdJMapPlugin;
+import com.dreambx.jmapch.client.plugin.SampleWaypointFactory;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
@@ -9,16 +11,6 @@ import net.minecraft.util.text.TextComponentString;
 
 public class CmdBase extends CommandBase {
     // 必须覆写。这一部分将作为命令的名字而存在。
-    // 换言之，该命令的第一部分将会是 /mycommand。
-    /*
-    @Override
-    public String getCommandName() {
-        return "mycommand";
-    }
-     */
-
-
-
     @Override
     public String getName()
     {

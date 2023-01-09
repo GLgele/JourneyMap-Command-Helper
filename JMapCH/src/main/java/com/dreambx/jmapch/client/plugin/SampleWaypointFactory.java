@@ -22,15 +22,18 @@ package com.dreambx.jmapch.client.plugin;
 
 import com.dreambx.jmapch.JmapCH;
 import journeymap.client.api.IClientAPI;
+import journeymap.client.api.IClientPlugin;
 import journeymap.client.api.display.Waypoint;
 import journeymap.client.api.model.MapImage;
+//import journeymap.client.api.impl.ClientAPI;
+import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 
 /**
  * Sample factory that creates a waypoint.
  */
-class SampleWaypointFactory
+public class SampleWaypointFactory
 {
     /**
      * ExampleMod will create a waypoint for the bed slept in at the provided coordinates.
@@ -55,7 +58,6 @@ class SampleWaypointFactory
 
             // Add or update
             jmAPI.show(bedWaypoint);
-
         }
         catch (Throwable t)
         {

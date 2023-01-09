@@ -18,7 +18,7 @@ public class JmapCH
     public static final String MODID = "jmapch";
     public static final String NAME = "JourneyMap Command Helper";
     public static final String VERSION = "1.0";
-    public static final String DEPENDENCIES = "after:journeymap";
+    public static final String DEPENDENCIES = "required-after:journeymap";
 
     public static final Logger LOGGER = LogManager.getFormatterLogger(MODID);
 
